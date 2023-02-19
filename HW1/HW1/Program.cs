@@ -19,11 +19,12 @@ namespace Less2
 
             Console.WriteLine("is reversed");
             string isReverse = Console.ReadLine();
+            bool isReverseBool = isReverse == "true" ? true: false;
 
 
 
 
-            Console.WriteLine(Calculate(float.Parse(firstOperand), float.Parse(secondOperand), operation, bool.Parse(isReverse)));
+            Console.WriteLine(Calculate(float.Parse(firstOperand), float.Parse(secondOperand), operation, isReverseBool));
         }
         static float Calculate(float firstOperant, float secndOperant, string operation, bool isRevers = false)
         {
