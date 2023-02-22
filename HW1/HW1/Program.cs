@@ -20,7 +20,7 @@ namespace Less2
             Console.WriteLine("is reversed");
             string isReverse = Console.ReadLine();
             bool isReverseBool = isReverse == "true" ? true: false;
-
+           
 
 
 
