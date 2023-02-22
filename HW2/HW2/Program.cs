@@ -23,23 +23,33 @@ namespace Less2
                     Console.WriteLine("enter operation");
                     operation = Console.ReadLine();
 
-                    Console.WriteLine("enter second operand");
-                    secondOperand = float.Parse(Console.ReadLine());
-
-                    if (operation == "/")
+                    switch (operation) 
                     {
-                        Console.WriteLine("is reversed");
-                        isReverse = Console.ReadLine();
-                        isReverseBool = isReverse == "true" ? true : false;
-                        Console.WriteLine(Calculate(firstOperand, secondOperand, operation, isReverseBool));
-                        isError = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine(Calculate(firstOperand, secondOperand, operation));
-                        isError = false;
-                    }
+                        case "sqrt":
+                            Console.WriteLine(Calculate(firstOperand, 0, operation));
+                            isError = false;
+                            break;
 
+                        case "/":
+                            Console.WriteLine("enter second operand");
+                            secondOperand = float.Parse(Console.ReadLine());
+
+                            Console.WriteLine("is reversed");
+                            isReverse = Console.ReadLine();
+                            isReverseBool = isReverse == "true" ? true : false;
+                            Console.WriteLine(Calculate(firstOperand, secondOperand, operation, isReverseBool));
+                            isError = false;
+                            break;
+
+                        default:
+                            Console.WriteLine("enter second operand");
+                            secondOperand = float.Parse(Console.ReadLine());
+
+
+                            Console.WriteLine(Calculate(firstOperand, secondOperand, operation));
+                            isError = false;
+                            break;
+                    }
 
                 }
                 catch (Exception ex)
@@ -68,6 +78,10 @@ namespace Less2
                 
                 case "/":
                     return isRevers ? secndOperant / firstOperant : firstOperant / secndOperant;
+                case "^":
+                    return Convert.ToInt32(Math.Pow(firstOperant, secndOperant));
+                case "sqrt":    
+                    return Convert.ToInt32(Math.Sqrt(firstOperant));
 
                 default:
                     return 0;
