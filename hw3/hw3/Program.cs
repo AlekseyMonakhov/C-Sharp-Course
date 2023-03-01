@@ -88,7 +88,7 @@ int[] GetSort(int[] array, bool fromMaxToMin = true)
 List<int> even = GetEven(numbers);
 List<int> odd = GetOdd(numbers);
 List<int> reversed = GetReverse(numbers);
-int[] sorted = GetSort(numbers, true);
+int[] sorted = GetSort(numbers, false);
 
 
 
@@ -96,4 +96,3 @@ for (int i = 0; i < sorted.Length - 1; i++)
 {
 	Console.WriteLine(sorted[i]);
 }
-
