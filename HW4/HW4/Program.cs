@@ -12,6 +12,10 @@ float[] calcTime(int photographersAmount, int[] photographersSpeedArr, int fotoA
     }
     
     result[0] = (float)fotoAmount / (float)totalSpeed;
+    if (float.IsNaN(result[0]))
+    {
+        throw new Exception("not a valid input");
+    }
 
     for (int i = 0; i < photographersSpeedArr.Length; i++)
     {
@@ -51,7 +55,7 @@ do
             if (i == 0)
             {
 
-                Console.WriteLine($"team will process this task in {result[i] * 60} minutes");
+                Console.WriteLine($"team will process this task in {result[i] * 60}minutes");
 
             }
             else
