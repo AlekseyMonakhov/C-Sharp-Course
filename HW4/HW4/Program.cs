@@ -1,7 +1,7 @@
 ﻿using System;
 bool isError = false;
 
-float[] calcTime(int photographersAmount, int[] photographersSpeedArr, int fotoAmount)
+float[] calcTime(int[] photographersSpeedArr, int fotoAmount)
 {
     int totalSpeed = 0;
     float[] result = new float[photographersSpeedArr.Length + 1];
@@ -56,7 +56,7 @@ do
 
         isError = false;
 
-        float[] result = calcTime(photographersAmount, photographersSpeedArr, fotoAmount);
+        float[] result = calcTime(photographersSpeedArr, fotoAmount);
 
         for (int i = 0; i < result.Length; i++)
         {
