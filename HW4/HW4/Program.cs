@@ -1,4 +1,5 @@
 ﻿using System;
+bool isError = false;
 
 float[] calcTime(int photographersAmount, int[] photographersSpeedArr, int fotoAmount)
 {
@@ -20,41 +21,52 @@ float[] calcTime(int photographersAmount, int[] photographersSpeedArr, int fotoA
     return result;
 }
 
-try
+
+do
 {
 
-    Console.WriteLine("Enter number of photographers");
-    int photographersAmount = int.Parse(Console.ReadLine());
-
-    int[] photographersSpeedArr = new int[photographersAmount];
-
-    for (int i = 0;i < photographersAmount; i++)
+    try
     {
-        Console.WriteLine($"Enter speed of {i + 1}");
-        photographersSpeedArr[i]= int.Parse(Console.ReadLine()); 
-    }
-   
-    Console.WriteLine("Enter number of fotos needed to process");
-    int fotoAmount = int.Parse(Console.ReadLine());
 
-    float[] result = calcTime(photographersAmount, photographersSpeedArr, fotoAmount);
+        Console.WriteLine("Enter number of photographers");
+        int photographersAmount = int.Parse(Console.ReadLine());
 
-    for (int i = 0; i < result.Length; i++)
-    {
-        if(i == 0)
+        int[] photographersSpeedArr = new int[photographersAmount];
+
+        for (int i = 0; i < photographersAmount; i++)
         {
-            Console.WriteLine($"team will process this task in {result[i]}h");
+            Console.WriteLine($"Enter speed of {i + 1}");
+            photographersSpeedArr[i] = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("Enter number of fotos needed to process");
+        int fotoAmount = int.Parse(Console.ReadLine());
+
+        isError = false;
+
+        float[] result = calcTime(photographersAmount, photographersSpeedArr, fotoAmount);
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            if (i == 0)
+            {
+
+                Console.WriteLine($"team will process this task in {result[i] * 60} minutes");
+
+            }
+            else
+            {
+                Console.WriteLine($"{i} fotograph result is {result[i]} photos");
+            }
 
         }
-        else
-        {
-            Console.WriteLine($"{i} fotograph result is {result[i]} photos");
-        }
-        
+
+    }
+    catch (Exception ex)
+    {
+        isError= true;
+        Console.WriteLine("some input error");
     }
 
-}
-catch(Exception ex)
-{
-    Console.WriteLine(ex.ToString());
-}
+} while (isError);
+
