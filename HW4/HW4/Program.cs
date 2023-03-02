@@ -12,10 +12,6 @@ float[] calcTime(int photographersAmount, int[] photographersSpeedArr, int fotoA
     }
     
     result[0] = (float)fotoAmount / (float)totalSpeed;
-    if (float.IsNaN(result[0]))
-    {
-        throw new Exception("not a valid input");
-    }
 
     for (int i = 0; i < photographersSpeedArr.Length; i++)
     {
@@ -35,12 +31,24 @@ do
         Console.WriteLine("Enter number of photographers");
         int photographersAmount = int.Parse(Console.ReadLine());
 
+        if (photographersAmount < 1)
+        {
+            throw new Exception("photographers count cant be less then 1");
+        }
+
         int[] photographersSpeedArr = new int[photographersAmount];
 
         for (int i = 0; i < photographersAmount; i++)
         {
             Console.WriteLine($"Enter speed of {i + 1}");
-            photographersSpeedArr[i] = int.Parse(Console.ReadLine());
+            int photographerSpeed = int.Parse(Console.ReadLine());
+
+            if (photographerSpeed == 0)
+            {
+                throw new Exception("photographer speed cant be 0");
+            }
+
+            photographersSpeedArr[i] = photographerSpeed;
         }
 
         Console.WriteLine("Enter number of fotos needed to process");
@@ -69,7 +77,7 @@ do
     catch (Exception ex)
     {
         isError= true;
-        Console.WriteLine("some input error");
+        Console.WriteLine(ex.Message);
     }
 
 } while (isError);
