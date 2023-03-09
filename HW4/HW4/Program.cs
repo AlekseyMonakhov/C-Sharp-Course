@@ -11,7 +11,7 @@ float[] calcTime(int[] photographersSpeedArr, int fotoAmount)
         totalSpeed += photographersSpeedArr[i];
     }
     
-    result[0] = (float)fotoAmount / (float)totalSpeed;
+    result[0] = (float)fotoAmount / (float)totalSpeed;  
 
     for (int i = 0; i < photographersSpeedArr.Length; i++)
     {
