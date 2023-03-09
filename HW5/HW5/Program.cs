@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 void findThgreeChars(string str) {
 
-    if(str.Length ==0)
+    if(str.Length <= 2)
     {
-        throw new Exception("String cant be empty");
+        throw new Exception("String cant be empty, or less then 3 symbols");
     }
     if(str.Replace(" ","").Length == 0)
     {
@@ -49,6 +49,7 @@ void CamelCase (string str)
 
     char[] separators = new char[] { ' ', '.',',' };
     List<string> stringArr = new List<string>(str.Split(separators, StringSplitOptions.RemoveEmptyEntries ));
+
     string result = "";
     for (int i = 0; i < stringArr.Count; i++)
     {
@@ -80,6 +81,11 @@ void cutExplanations(string str)
     if (str.Trim().Length == 0)
     {
         throw new Exception("cant use only spaces");
+    }
+
+    if(!(str.Contains('(') && str.Contains(')')))
+    {
+        throw new Exception("no brackets in string");
     }
 
 
@@ -128,7 +134,7 @@ void CompareStrings(string str, string str2)
 
 }
 
-string myString = "d";
+string myString = "d32";
 string mySecondString = "Lorem ipsum sit doollor ametsdfasdf";
 string myThirdString = "this is some test text (test first string ) and the (test secont string) and then (test third string)";
 
@@ -136,7 +142,7 @@ string myThirdString = "this is some test text (test first string ) and the (tes
 
 try
 {
-    cutExplanations(myThirdString);
+    CompareStrings(myThirdString, myThirdString);
 }   
 catch (Exception ex)
 {
