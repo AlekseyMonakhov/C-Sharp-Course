@@ -11,7 +11,7 @@ string myThirdString = "this is some test text (test first string ) and the (tes
 
 try
 {
-    HomeWork.findThgreeChars(myThirdString);
+    HomeWork.CamelCase(mySecondString);
 }
 catch (Exception ex)
 {
@@ -53,7 +53,7 @@ public class HomeWork
         Console.WriteLine($"{sortedDict[0].Key}, {sortedDict[1].Key}, {sortedDict[2].Key}, are most used in this sentence");
 
     }
-    static void CamelCase(string str)
+    public static void CamelCase(string str)
     {
         if (str.Length == 0)
         {
@@ -89,7 +89,7 @@ public class HomeWork
 
     }
 
-    static void cutExplanations(string str)
+    public static void cutExplanations(string str)
     {
         if (str.Length == 0)
         {
