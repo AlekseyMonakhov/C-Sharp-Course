@@ -3,15 +3,15 @@
 using System.Text.RegularExpressions;
 
 
-string myString = "d32";
-string mySecondString = "Lorem ipsum sit doollor ametsdfasdf";
+string myString = "привет";
+string mySecondString = "вет";
 string myThirdString = "this is some test text (test first string ) and the (test secont string) and then (test third string)";
 
 
 
 try
 {
-    HomeWork.CamelCase(mySecondString);
+    HomeWork.CompareStrings(mySecondString, myString);
 }
 catch (Exception ex)
 {

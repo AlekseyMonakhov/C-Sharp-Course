@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Linq;
 using System.Text.RegularExpressions;
 
 void findThgreeChars(string str) {
@@ -122,27 +123,32 @@ void CompareStrings(string str, string str2)
         throw new Exception("cant use only spaces");
     }
 
-    List<char> firstStr = new List<char>(str.ToCharArray());
-    firstStr.Sort((x, y) => x.CompareTo(y));
 
-    List<char> secondStr = new List<char>(str2.ToCharArray());
-    secondStr.Sort((x, y) => x.CompareTo(y));
 
-    bool result = new string(firstStr.ToArray()) == new string(secondStr.ToArray());
+    var result = str.Length > str2.Length ? str.IndexOf(str2) : str2.IndexOf(str);
 
-    Console.WriteLine(result);
+    
+    if(result < 0)
+    {
+        Console.WriteLine(false);
+    }
+    else
+    {
+        Console.WriteLine(true);
+    }
+
 
 }
 
-string myString = "d32";
-string mySecondString = "Lorem ipsum sit doollor ametsdfasdf";
+string myString = "some test string";
+string mySecondString = "just test";
 string myThirdString = "this is some test text (test first string ) and the (test secont string) and then (test third string)";
 
 
 
 try
 {
-    CompareStrings(myThirdString, myThirdString);
+    CompareStrings(myString, mySecondString);
 }   
 catch (Exception ex)
 {
