@@ -124,24 +124,39 @@ void CompareStrings(string str, string str2)
     }
 
 
+    bool result = true;
+    List<char> firstStr = new List<char>(str.ToCharArray());
+    List<char> secondStr = new List<char>(str2.ToCharArray());
 
-    var result = str.Length > str2.Length ? str.IndexOf(str2) : str2.IndexOf(str);
-
-    
-    if(result < 0)
+    if(firstStr.Count > secondStr.Count)
     {
-        Console.WriteLine(false);
+        foreach (char c in secondStr) 
+        {
+            if (!firstStr.Contains(c)) 
+            { 
+                result = false;
+            }
+        }
     }
     else
     {
-        Console.WriteLine(true);
+        foreach (char c in firstStr)
+        {
+            if (!secondStr.Contains(c))
+            {
+                result = false;
+            }
+        }
     }
+    Console.Write(result);
+
+
 
 
 }
 
-string myString = "some test string";
-string mySecondString = "just test";
+string myString = "мухомор";
+string mySecondString = "рома";
 string myThirdString = "this is some test text (test first string ) and the (test secont string) and then (test third string)";
 
 
