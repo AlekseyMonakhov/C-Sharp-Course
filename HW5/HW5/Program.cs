@@ -155,8 +155,8 @@ void CompareStrings(string str, string str2)
 
 }
 
-string myString = "мухомор";
-string mySecondString = "рома";
+string myString = "мухамор";
+string mySecondString = "мор";
 string myThirdString = "this is some test text (test first string ) and the (test secont string) and then (test third string)";
 
 
