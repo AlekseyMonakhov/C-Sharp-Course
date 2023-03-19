@@ -12,14 +12,14 @@ var aspirant2 = new Aspirant("Aleksey", "Monakhov", "EU21", 3);
 
 List<Student> students = new List<Student> { student, aspirant, student1, student2, aspirant1, aspirant2 };
 
-for (int i = 0;i < students.Count; i++)
+for (int i = 0; i < students.Count; i++)
 {
-    students[i].getScholarship();
+    students[i].GetScholarship();
 
 }
 
 
-var res = NumConverter.convertDoubleToArray(123.234321341234134);
+var res = NumConverter.ConvertDoubleToArray(123.234321341234134);
 for (int i = 0; i < res.Count; i++)
 {
     Console.WriteLine(res[i]);
