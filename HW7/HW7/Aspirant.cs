@@ -9,7 +9,7 @@ namespace HW7
     public class Aspirant : Student
     {
         public Aspirant(string firstName, string lastName, string group, double averageMark) : base(firstName, lastName, group, averageMark){}
-        public override void getScholarship()
+        public override void GetScholarship()
         {
             if (this.averageMark == 5)
             {

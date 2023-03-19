@@ -13,7 +13,7 @@ namespace HW7
         public string group { get; set; }
         public double averageMark { get; set; }
 
-        public void getScholarship();
+        public void GetScholarship();
 
     }
 }

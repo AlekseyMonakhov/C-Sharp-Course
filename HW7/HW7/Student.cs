@@ -21,7 +21,7 @@ namespace HW7
         public string group { get; set; }
         public double averageMark { get; set; }
 
-        virtual public void getScholarship()
+        virtual public void GetScholarship()
         {
             if(this.averageMark == 5)
             {
