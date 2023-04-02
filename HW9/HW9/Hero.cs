@@ -11,7 +11,7 @@ namespace HW9
         private int _health;
         private int _damage;
 
-        protected int Health {
+        public int Health {
             get {
                 if(Items.Count > 0)
                 {
@@ -24,7 +24,7 @@ namespace HW9
                 _health = value;
             } 
         }
-        protected int Damage 
+        public int Damage 
         {
             get
             {
@@ -40,7 +40,7 @@ namespace HW9
             }
         }
 
-        public List<Item> Items { get; set; } = new List<Item>();
+        private List<Item> Items { get; set; } = new List<Item>();
 
         public void Hit(Hero hero)
         {
@@ -60,12 +60,13 @@ namespace HW9
             
         }
 
-        public void removeItem(Item item)
+        public void removeItem()
         {
             if(Items.Count == 0) 
             {
                 throw new Exception("No items");
-            }else
+            }
+            else
             {
                 Items.RemoveAt(0);
             }

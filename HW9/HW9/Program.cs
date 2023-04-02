@@ -11,12 +11,13 @@ try
 {
     bar.addItem(new BladesOfAtack());
     mage.addItem(new BladesOfAtack());
-    mage.removeItem(new Satanic());
+    
     
 
     
 
-    Console.WriteLine(mage.Items.Count);
+    Console.WriteLine(mage.Damage);
+    Console.WriteLine(mage.Health);
 }
 catch (Exception ex) 
 {
@@ -26,7 +27,7 @@ catch (Exception ex)
 
 public class BladesOfAtack : Item
 {
-    public BladesOfAtack() : base(2, 5)
+    public BladesOfAtack() : base(112, 115)
     {
     }
 }
