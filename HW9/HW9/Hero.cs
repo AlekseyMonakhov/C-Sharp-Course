@@ -11,7 +11,7 @@ namespace HW9
         private int _health;
         private int _damage;
 
-        protected int Health {
+        public int Health {
             get {
                 if(Items.Count > 0)
                 {
@@ -24,7 +24,7 @@ namespace HW9
                 _health = value;
             } 
          }
-        protected int Damage {
+        public int Damage {
             get
             {
                 if (Items.Count > 0)
@@ -44,6 +44,27 @@ namespace HW9
         public void Hit(Hero hero)
         {
             hero.Health -= Damage;
+        }
+
+        public void useItem(Hero enemy)
+        {
+            if(Items.Count > 0)
+            {
+                if (Items[0].GetType() == typeof(BladesOfAtack))
+                {
+                    BladesOfAtack firstItem = (BladesOfAtack)Items[0];
+                    firstItem.CriticalStrike(enemy);
+                }
+                else
+                {
+                    throw new Exception("Item has no active abilities");
+                }
+
+            }
+            else
+            {
+                throw new Exception("Hero have no items");
+            }
         }
 
         public void addItem(Item item)

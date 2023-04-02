@@ -9,15 +9,12 @@ var mage = new Mage();
 
 try
 {
-    bar.addItem(new BladesOfAtack());
+    bar.addItem(new Satanic());
     mage.addItem(new BladesOfAtack());
-    
-    
+    mage.useItem(bar);
 
-    
 
-    Console.WriteLine(mage.Damage);
-    Console.WriteLine(mage.Health);
+    Console.WriteLine(bar.Health);
 }
 catch (Exception ex) 
 {
@@ -27,8 +24,14 @@ catch (Exception ex)
 
 public class BladesOfAtack : Item
 {
-    public BladesOfAtack() : base(112, 115)
+    public BladesOfAtack() : base(2, 5)
     {
+    }
+    public void CriticalStrike(Hero hero)
+    {
+        Random rnd = new Random();
+        int randomVal = rnd.Next(10, 50);
+        hero.Health = hero.Health > randomVal ? hero.Health - randomVal : 0;
     }
 }
 
