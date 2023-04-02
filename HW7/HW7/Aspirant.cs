@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW7
 {
+   
     public class Aspirant : Student
     {
         public Aspirant(string firstName, string lastName, string group, double averageMark) : base(firstName, lastName, group, averageMark){}
@@ -20,5 +21,11 @@ namespace HW7
                 Console.WriteLine("2200 UAH");
             }
         }
+    }
+    public class Test : Aspirant
+    {
+        string test = "dasfasdfasdfasdf";
+        public Test(string firstName, string lastName, string group, double averageMark) : base(firstName, lastName, group, averageMark) { }
+
     }
 }
