@@ -11,7 +11,7 @@ namespace HW9
         private int _health;
         private int _damage;
 
-        public int Health {
+        protected int Health {
             get {
                 if(Items.Count > 0)
                 {
@@ -23,9 +23,8 @@ namespace HW9
             set {
                 _health = value;
             } 
-        }
-        public int Damage 
-        {
+         }
+        protected int Damage {
             get
             {
                 if (Items.Count > 0)
