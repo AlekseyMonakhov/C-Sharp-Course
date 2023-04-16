@@ -33,9 +33,11 @@ namespace Homework10
 
             Person oldest = peopleList.OrderByDescending((person) => person.Age).ToArray().FirstOrDefault();
 
+            //Додати новий атрибут, що означає рік народження. Порахувати кожному рік народження , якби він був зараз живий. -- added to Person constructor
+
             int averageBirthYear = peopleList.Aggregate(0, (prev, curr) => prev + curr.BirthYear) / peopleList.Count();
 
-           Console.WriteLine(averageBirthYear);
+           Console.WriteLine(oldest.BirthYear);
 
         }
     }
