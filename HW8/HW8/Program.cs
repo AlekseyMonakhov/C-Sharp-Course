@@ -13,6 +13,7 @@ public class MainClass
 
 
 
+        basefolder.AddSubFolder(path);
         basefolder.AddSubFolder(path2);
         Console.WriteLine(basefolder.SubFolders.First().SubFolders.First().SubFolders.First().Document.Name);
        
